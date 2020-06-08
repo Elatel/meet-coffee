@@ -1,0 +1,200 @@
+body{
+    text-align: center;
+    color: #000f08; /*codigo de color hexadecimal el cual se representa #RRGGBB esta es una escala de color que va desde el numero 0 hasta la letra f, sieno 0 el rango mas bajo y el el rango mas alto se ordenan de la siguente manera:
+    0 1 2 3 4 5 6 7 8 9 a b c d e f
+    por lo tanto los colores son los siguientes:
+    Blanco: #ffffff
+    Negro: #000000
+    Rojo: #ff0000
+    Verde: #00ff00
+    Azul #0000ff
+    Nickel: #707070
+    Rich Black: #000f08
+    Ginder: #b36b01
+    Sweet Brown: #a4452c*/ 
+    margin: 0;
+    font-family: "Open Sans", sans-serif;/*font-family: Arial, Helvetica, sans-serif;las tipografias se pueden cambiar atravez de la propiedad font-family, aparacen mas de una propiedad para las fuentes esto se llama fallback, es decir el plan b, cuando no funciona la primera recurre a la segunda y si no funciona esa recurre a la tercera*/
+}
+
+
+body * { /*el asterisco significa todo, selector universal aplica a todas las etiquetas y que seguido de body seleccionara todas las etiquetas dentro de body a las que les dara una declaracion*/
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 3.75em;/*1 em equivale a 16 pixeles, en este caso 3.7em equivale al valor de la tipografia * 3.75*/
+    margin-bottom: 0.25em;/*el margen es equivalente a lo que mide la tipografia, por lo tanto si hacemos un margin-bottom de 0.25 este sera un 25%  de lo  que mide la tipografia*/
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4{
+    font-size: 1.75em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+.sweet-brown h3, .sweet-brown h5 {
+    margin-bottom: 0.5em;
+}
+
+#eventos h2 {
+    margin-bottom: 1em;
+}
+ 
+#eventos h3 {
+    margin-bottom: 1em auto;
+}
+
+.subtitulo, h4, h5 {
+    font-weight: 400;
+}
+
+.oscuro{
+    background: #000f08;
+    color: #ffffff;
+}
+
+.oscuro a{
+    color: #ffffff;/*llamamos a la clase oscuro y atravez del selector decendente se llama a todas las etiquetas a en esta clase, dandole un color especifico segun requerimiento*/
+    text-decoration: none;
+}
+
+.sweet-brown{
+text-align: left;
+background: #a4452c;
+color: #ffffff;/*se refiere al color de las letras*/
+padding: 50px;
+white-space: nowrap;
+}
+
+.hero-section{
+    text-align: right;
+    background-image: url("../img/bg-hero.png");
+    background-repeat: no-repeat;/*esto permitira que la imagen no se repetira una y otra vez como mosaico*/
+    background-size: cover;/*especifica el tamaño de la imagen, cover escala la imagen para que cubra el elemento que la contiene*/
+    color: #ffffff;
+    text-shadow: 0.125em 0.25em 0.125em #707070;
+    /*text-shadow: 2px 3px 2px #707070;esto hace que se genere una sombra, aqui insertamos 4 parametros:
+    el primero es h shadow que es la posicion horizontal de la zombra,osea 2 pixeles hacia la derecha, los valores negativos son haceptados llevando la sombra hacia la izquierda
+    el segundo es v shadox que es la posicion vertical de la zombra, osea 2 pixeles hacia abajo, los valores negativos estan permitidos y llevan a la sombra hacia arriba
+    el tercero es view radius que especifica el desenfoque de la sombra, mientras mas grande sea  mas desenfocado sera
+    el cuarto es el color,este se especifica segun lo requerido*/
+    padding: 6.25rem 3.125rem;/*padding: 50px 50px 100px 50px;*//*con dos parametros se entiende quer el primero es arriba y abajo y el otro izquierda y derecha;*/
+}
+
+section, footer {
+    margin-top: 75px;
+}/*estamos llamando a todas las tiquetas de tipo section y al footer*/
+
+footer{
+    padding: 50px;
+}
+
+
+/*tanto el margin, border y padding se pueden espicificar por top rigth bottom y left pero se puede ordernar en una sola linea de 
+codigo indicando las 4 direcciones, cuando se da solo sin especificar se aplicara para todos los lados iguales, cuando tiene dos valores el primero es top y bottom y el segundo rigth y left, cuando son 4 se interpreta como un reloj top-rigth-bottom-left, en ese orden*/
+
+/*la propiedad display es la mas importante para controlar la dispocicion de los elementos, cada elemento tiene un valor de visualizacion predeterminado segun el tipo de elemento que sea, su valor en su mayoria seria: block, inline
+block comienza una nueva linea y ocupa todo el ancho disponible, funciona para:
+<div>
+<hi><h6>
+<p>
+<form>
+<header>
+<footer>
+<secction>
+inline no comienza una nueva linea y ocupa el minimo de ancho disponible, funciona para:
+<span>
+<a>
+<strong>
+existe un variado entre ambos y se llama inline-block, la diferencia principal con el block es que este no agrega un salto de linea despues del elemento 
+la diferencia con en inline y el inline-box es que  permite establecer un ancho(width) y uan altura(heigtht) al elemento especifico*/
+
+.charla-texto, .evento { /*de esta manera se aplica ambos, a charlas y a eventos*/
+    display: inline-block;
+}
+
+/*el weigth y haigth tienen dos timpos de medidas, las absolutas y las relativas, estas propiedades no incluyen el padding, border o margin, afectan directamente al area de contenido del elemento
+las medidas absolutas son aquellas que estan completamente definidas, no dependen de otros valores de referencia, estas son:
+- pixel (px) es lo mas logico ya que estamos trabajando con pantallas, es la unidad minima de resolucion en una pantalla
+- milimetros (mm)
+- centimetros (cm)
+- pulgada (in)
+-puntos (pt)*/
+
+/*las unidades relativas son valores que no son exactos y se calculan a partir de otro valor de referencia, estas son:
+son las mas utilizadas en sitios web por su adaptacion a los diferentes dispocitivos
+- porcentaje (%) su valor esta calculado en vase a su contenedor
+- viewport width (vw) y viewport height (vh) son medidas relativas de acuerdo al viewport, 1 vw es el 1% del ancho de la ventana de visualizacion  y 100vw es el ancho total de la ventana. 1vh es el 1% de la altura de la ventana y 100%vh es la altura total de la ventana
+- rem  aqui las unidades dependen directamente del tamaño de fuente del elemento html
+- em dependen del fullsize definido en el elemento en que se encuentra*/
+
+.centrado {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.charla-speaker {
+    width: 25%;
+    vertical-align: middle;
+}
+
+.charla-texto {
+    width: 72.5%;
+    vertical-align: middle;
+    margin-left: 5%; /*ya tenemos un 95% entre la imagen y texto solo fantaria 5% para llegar al 100% */
+    white-space: normal;
+}
+
+.evento {
+    width: 30%;
+}
+
+.evento img {
+    width: 75%;
+}
+
+nav {
+    text-align: left;
+    padding: 1.25rem 4rem;
+    position: fixed; /*propiedad que permite por ejemplo la barra de menu nos siga, especifica el tipo de metodo de posicionamiento utilizado para  un elemento, los valores pueden ser: statik, relative, fixed, absolute o style.
+    por defecto los elementos son statik, por lo que no se posicionan de una manera especial
+    un elemento con la propiedad fixed por defecto se posiciona en la esquina superior izquiera de la ventana de visualizacion del navegador y no se mueve de ahi aun que hagamos scroll */
+    width: 100vw;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1em;
+    vertical-align: middle;
+}
+
+.icono {
+    width: 2rem;
+}
+
+.icono svg {
+    fill: #ffffff;
+}
+
+footer i {
+    margin: 0 0.25em 0.5em 0.2em;
+}
+
